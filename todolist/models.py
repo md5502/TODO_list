@@ -12,12 +12,11 @@ class Goal(models.Model):
         (0, 'doing'),
         (1, 'Done'),
         (2, 'Wasted'),
-
     ]
     title = models.CharField(max_length=100)
     slug = models.SlugField(null=True, blank=True,
                             unique=True, allow_unicode=True)
-    status = models.IntegerField(choices=STATUS_CHOICES, default=STATUS_CHOICES[0][1])
+    status = models.IntegerField(choices=STATUS_CHOICES, default=STATUS_CHOICES[0][0])
     abstract = models.TextField(null=True, blank=True)
     deadline = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -37,12 +36,11 @@ class Work(models.Model):
         (0, 'doing'),
         (1, 'Done'),
         (2, 'Wasted'),
-
     ]
     title = models.CharField(max_length=100)
     slug = models.SlugField(null=True, blank=True,
                             unique=True, allow_unicode=True)
-    status = models.IntegerField(choices=STATUS_CHOICES,default=STATUS_CHOICES[0][1])
+    status = models.IntegerField(choices=STATUS_CHOICES,default=STATUS_CHOICES[0][0])
     abstract = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

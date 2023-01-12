@@ -10,9 +10,3 @@ class WorkAdmin(admin.ModelAdmin):
     list_editable = ['status']
     list_filter = ['deadline', 'created_at']
     raw_id_fields=['user']
-
-# @admin.register(Goal)
-# class GoalAdmin(admin.ModelAdmin):
-#     list_display = ['title', 'slug', 'status', 'abstract', 'user',]
-#     search_fields = ['title', 'status', 'abstract']
-#     list_editable = ['status']
